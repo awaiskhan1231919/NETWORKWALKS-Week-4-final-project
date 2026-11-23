@@ -160,7 +160,7 @@ Password recovered: **`!@#$%^&`**
 
 ### M4 — Penetration Testing Report
 
-A full professional report (Executive Summary, Scope & Methodology, Findings & Proof of Exploitation, Risk Ratings, Recommendations) is available in [`report/Mediroza_Pentest_Report.pdf`](report/Mediroza_Pentest_Report.pdf) / [`report/Mediroza_Pentest_Report.docx`](report/Mediroza_Pentest_Report.docx).
+A full professional report (Executive Summary, Scope & Methodology, Findings & Proof of Exploitation, Risk Ratings, Recommendations) is available in [`report/Mediroza_Pentest_Report.pdf`](Mediroza_Pentest_Report.pdf).
 
 ---
 
@@ -184,7 +184,7 @@ A full professional report (Executive Summary, Scope & Methodology, Findings & P
 - Add rate limiting / account lockout on the login endpoint.
 - Re-test after remediation before considering the system production-safe.
 
-Full justification and remediation detail for each finding is in the [penetration testing report](report/Mediroza_Pentest_Report.pdf).
+Full justification and remediation detail for each finding is in the [penetration testing report](Mediroza_Pentest_Report.pdf).
 
 ---
 
