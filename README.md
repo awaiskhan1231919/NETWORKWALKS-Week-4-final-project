@@ -32,7 +32,7 @@ The engagement brief defined four milestones:
 |---|---|---|
 | **M1** | Attack the website and retrieve 3 confidential patient PDF lab reports | ✅ Complete |
 | **M2** | Crack the encryption on all 3 retrieved files | ✅ Complete |
-| **M3** | Find staff salaries and shareholder details of the hospital | 🔄 In progress |
+| **M3** | Find staff salaries and shareholder details of the hospital | ✅ Complete |
 | **M4** | Write a professional penetration testing report | ✅ Complete (draft — pending M3 addendum) |
 
 
