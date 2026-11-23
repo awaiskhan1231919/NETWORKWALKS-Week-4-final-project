@@ -35,32 +35,7 @@ The engagement brief defined four milestones:
 | **M3** | Find staff salaries and shareholder details of the hospital | 🔄 In progress |
 | **M4** | Write a professional penetration testing report | ✅ Complete (draft — pending M3 addendum) |
 
----
 
-## 🗂️ Repository Structure
-
-```
-mediroza-pentest-lab/
-├── README.md
-├── report/
-│   ├── Mediroza_Pentest_Report.pdf
-│   └── Mediroza_Pentest_Report.docx
-└── screenshots/
-    ├── mx_.png
-    ├── ns.png
-    ├── ping.png
-    ├── sql_injection.png
-    ├── succesfuly_logedin.png
-    ├── pdf1_password_pound.png
-    ├── pdf1_password.png
-    ├── pdf1_opend.png
-    ├── pdf2_password_pound.png
-    ├── pdf2_password.png
-    ├── pdf2_opend.png
-    ├── pdf3_password_pound.png
-    ├── pdf3_password.png
-    └── pdf3_opend.png
-```
 
 ---
 
@@ -86,7 +61,7 @@ Identified the mail infrastructure and authoritative name servers for the target
 ```bash
 host -t mx medirozahospital.com
 ```
-![MX record lookup](screenshots/mx_.png)
+![MX record lookup](mx.png)
 
 ```bash
 host -t ns medirozahospital.com
