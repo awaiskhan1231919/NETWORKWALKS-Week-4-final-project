@@ -154,7 +154,20 @@ Password recovered: **`!@#$%^&`**
 
 ### M3 — Critical Data Exposure (Salaries & Shareholder Details)
 
-🔄 **In progress.** Per the engagement brief's hints, the next step is metadata analysis of the three recovered PDFs (`exiftool -a -u -g1`) and any embedded attachments (`pdfdetach -list`), to identify a further exposure on the server pointing toward staff salary and shareholder records. This section will be updated once that analysis is complete.
+**Status: In Progress**
+
+- Recovered all three encrypted PDF reports using PDF2John and John the Ripper.
+- Identified Standard V2.3 (128-bit) PDF encryption.
+- Inspected all three recovered documents.
+- Performed initial metadata analysis using ExifTool.
+- Checked for embedded attachments using `pdfdetach` — no attachments found.
+- Further investigation into server-side data exposure is pending.
+
+**Tools Used:** PDF2John, John the Ripper, ExifTool, pdfdetach, Kali Linux.
+
+**Current Result:** All three PDF passwords were successfully recovered. No embedded attachments were identified. Employee salary and shareholder data exposure has not yet been confirmed.
+
+**Next Objective:** Investigate the additional server exposure referenced in the lab brief and document evidence of any accessible salary and shareholder records within the authorized testing scope.
 
 ---
 
